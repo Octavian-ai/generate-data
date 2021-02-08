@@ -1,9 +1,9 @@
-from typing import Generic, TypeVar, Iterable, Dict, GenericMeta, List
+from typing import Generic, TypeVar, Iterable, Dict, List
 from numpy import array, int32, ndarray, float32
 import abc
 T = TypeVar("T")
 
-class DynamicEnumMeta(GenericMeta):
+class DynamicEnumMeta(Generic[T]):
     def __new__(cls, name, bases, namespace, **kwargs):
         return super().__new__(DynamicEnumMeta, name, bases, namespace, **kwargs)
 
@@ -14,7 +14,7 @@ class DynamicEnumMeta(GenericMeta):
             self._register(key, value)
             super().__setattr__(key, value)
 
-class DynamicEnum(Generic[T], metaclass=DynamicEnumMeta):
+class DynamicEnum(Generic[T]):
     _LOCKED = False
 
     def __hash__(self):

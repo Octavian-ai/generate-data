@@ -1,4 +1,4 @@
-from neo4j.v1 import GraphDatabase, Driver
+from neo4j import GraphDatabase, Driver
 from .classes import CypherQuery, QueryParams, DatasetName
 from config import config
 from lazy import lazy
