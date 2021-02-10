@@ -24,7 +24,7 @@ There are a range of datasets you can generate:
 
 To generate a dataset (for example, article_0) run the following in this repository's root directory:
 
-1) `pip install pipenv`
-2) `pipenv install`
-3) `pipenv bash`
+1) `python3 -m venv env`
+2) `source env/bin/activate`
+3) `pip3 install -r requirements.txt`
 4) `./generate.py --dataset article_0`
